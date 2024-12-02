@@ -2,9 +2,9 @@
 
 1. Alter smallsh from Chapter 5 so that it handles interrupts more like a real shell:
 
-Your smallsh process shouldn’t be terminated upon <Ctrl-C> type-in. Currently, if you type <Ctrl-C>, your smallsh process will be terminated and exited.
-When you type in <Ctrl-C> in middle of executing your smallsh process, only your foreground process needs to be terminated. And, your smallsh process needs to print the next “Command>” prompt on a next line.
-When you type in <Ctrl-C> in middle of executing you smallsh process, your background processes should keep running.
+Your smallsh process shouldn’t be terminated upon <Ctrl-C> type-in. Currently, if you type Ctrl-C, your smallsh process will be terminated and exited.
+When you type in Ctrl-C in middle of executing your smallsh process, only your foreground process needs to be terminated. And, your smallsh process needs to print the next “Command>” prompt on a next line.
+When you type in Ctrl-C in middle of executing you smallsh process, your background processes should keep running.
 
 
 2. Unix shells support the notion of job control, which allows users to move jobs back and forth between background and foreground, and to change the process state (running, stopped, or terminated) of the processes in a job. Typing ctrl-c causes a SIGINT signal to be delivered to each process in the foreground job. The default action for SIGINT is to terminate each process. Similarly, typing ctrl-z causes a SIGTSTP signal to be delivered to each process in the foreground job. The default action for SIGTSTP is to place a process in the stopped state, where it remains until it is awakened by the receipt of a SIGCONT signal. Unix shells also provide various built-in commands that support job control. For example:
